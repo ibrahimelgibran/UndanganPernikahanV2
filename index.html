@@ -50,7 +50,6 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="id_ID" />
-    <meta property="og:url" content="https://ulems.my.id" />
     <meta
       property="og:site_name"
       content="Website Undangan Pernikahan Gibran dan Rizkita Secara Online"
@@ -69,12 +68,6 @@
       rel="shortcut icon"
       type="image/x-icon"
       href="assets/images/ieg.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      type="image/png"
-      href="https://ulems.my.id/assets/images/icon-192x192.png"
     />
     <link rel="icon" type="image/x-icon" href="assets/images/ieg.png" />
 
@@ -195,12 +188,7 @@
     <link rel="stylesheet" href="./css/app.css" />
   </head>
 
-  <body
-    data-email="user@example.com"
-    data-password="12345678"
-    data-url="https://api.ulems.my.id/"
-    style="overflow-y: hidden"
-  >
+  <body>
     <!-- Navbar Bottom -->
     <nav
       class="navbar navbar-dark bg-dark navbar-expand fixed-bottom rounded-top-4 p-0"
@@ -717,146 +705,13 @@
                   </p>
 
                   <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                  <button
-                    class="btn btn-light btn-sm rounded-3"
-                    data-nomer="123456789"
-                    onclick="util.salin(this)"
-                    autofocus
-                  >
-                    Salin No. Rekening
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Ucapan -->
-      <section class="m-0 p-0" id="ucapan">
-        <div class="container">
-          <div class="card-body border rounded-4 shadow p-3">
-            <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem">
-              Ucapan & Doa
-            </h1>
-            <div class="mb-1" id="balasan"></div>
-
-            <div class="mb-3">
-              <label for="form-nama" class="form-label">Nama</label>
-              <input
-                type="text"
-                class="form-control shadow-sm"
-                id="form-nama"
-                placeholder="Isikan Nama Anda"
-              />
-            </div>
-
-            <div class="mb-3">
-              <label
-                for="form-kehadiran"
-                class="form-label"
-                id="label-kehadiran"
-                >Kehadiran</label
-              >
-              <select class="form-select shadow-sm" id="form-kehadiran">
-                <option value="0" selected>Konfirmasi Kehadiran</option>
-                <option value="1">Hadir</option>
-                <option value="2">Berhalangan</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label for="form-pesan" class="form-label">Ucapan & Doa</label>
-              <div
-                id="alertDiv"
-                class="alert alert-info alert-dismissible fade show"
-                role="alert"
-              >
-                <h5>Bestieee!!!</h5>
-                <p class="m-0">
-                  Sekarang bisa format text seperti whatsapp lohh... cobainn
-                  sekaranggg, makaciwww bestieee
-                </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                  onclick="localStorage.setItem('alertClosed', 'true');document.getElementById('alertDiv').style.display = 'none';"
-                ></button>
-              </div>
-              <textarea
-                class="form-control shadow-sm"
-                id="form-pesan"
-                rows="4"
-                placeholder="Tulis Ucapan & Doa"
-              ></textarea>
-            </div>
-
-            <div class="d-flex">
-              <button
-                class="flex-fill btn btn-danger btn-sm rounded-3 shadow m-1"
-                style="display: none"
-                onclick="comment.batal()"
-                id="batal"
-              >
-                Batal<i class="fa-solid fa-xmark ms-1"></i>
-              </button>
-              <button
-                class="flex-fill btn btn-success btn-sm rounded-3 shadow m-1"
-                style="display: none"
-                onclick="comment.balas()"
-                id="balas"
-              >
-                Balas<i class="fa-solid fa-reply ms-1"></i>
-              </button>
-              <button
-                class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"
-                style="display: none"
-                onclick="comment.ubah()"
-                id="ubah"
-              >
-                Ubah<i class="fa-solid fa-pen-to-square ms-1"></i>
-              </button>
-              <button
-                class="flex-fill btn btn-primary btn-sm rounded-3 shadow m-1"
-                onclick="comment.kirim()"
-                id="kirim"
-              >
-                Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan"></div>
-
-          <nav class="d-flex justify-content-center mb-0">
-            <ul class="pagination mb-0">
-              <li class="page-item disabled" id="previous">
-                <button
-                  class="page-link"
-                  onclick="pagination.previous(this)"
-                  aria-label="Sebelumnya"
-                >
-                  <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
-                </button>
-              </li>
-              <li class="page-item disabled">
-                <span class="page-link text-light" id="page">1</span>
-              </li>
-              <li class="page-item" id="next">
-                <button
-                  class="page-link"
-                  onclick="pagination.next(this)"
-                  aria-label="Selanjutnya"
-                >
-                  Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
+      <div id="alertDiv"></div>
 
       <!-- Wave Separator -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -910,7 +765,8 @@
                 <i class="fa-brands fa-github me-1"></i
                 ><a
                   target="_blank"
-                  href="https://github.com/ibrahimelgibran/undangan"
+                  style="text-decoration: none"
+                  href="https://github.com/ibrahimelgibran/UndanganPernikahanV2"
                   >Ibrahim El Gibran</a
                 >
               </small>
@@ -1027,7 +883,13 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+      id="dsq-count-scr"
+      src="//https-iegcodeweddingv2-vercel-app.disqus.com/count.js"
+      async
+    ></script>
     <!-- App JS -->
     <script src="./js/app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
